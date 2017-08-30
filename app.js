@@ -64,5 +64,5 @@ app.use(function(err, req, res, next) {
 });
 app.listen(3000,function () {
     console.log('node is ok');
-})
+});
 module.exports = app;
