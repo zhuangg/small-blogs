@@ -12,13 +12,20 @@
 <nav>
     <span><a href="/">首页</a></span>
     <% if(!user){ %>
-    <span><a href="/login">登录</a></span>
-    <span><a href="/reg">注册</a></span>
+        <span><a href="/login">登录</a></span>
+        <span><a href="/reg">注册</a></span>
     <% }else{ %>
-    <span><a href="/post">发表</a></span>
-    <span><a href="/upload">上传</a></span>
-    <span><a href="/logout">退出</a></span>
+        <span><a href="/archive">存档</a></span>
+        <span><a href="/tags">标签</a></span>
+        <span><a href="/post">发表</a></span>
+        <span><a href="/upload">上传</a></span>
+        <span><a href="/logout">退出</a></span>
     <% } %>
+    <span>
+        <form action="/search" method="get">
+            <input class="search" type="text" name="keyword" placeholder="SEVRCH">
+        </form>
+    </span>
 </nav>
 <article>
     <% if(success){ %>

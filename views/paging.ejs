@@ -1,0 +1,48 @@
+<br>
+<div>
+    <% if(!isFirstPage) { %>
+    <span class="prepage">
+        <a href="?page=<%= isFirstPage %>">首页</a>
+    </span>
+    <% } %>
+
+    <!--<% if(!isFirstPage) { %>-->
+    <span class="prepage">
+        <a href="?page=<%= page - 1 %>">上一页</a>
+        <!--<a href="?page=<%= page - 1 %>"><%= page - 1 %></a>-->
+    </span>
+    <!--<% } %>-->
+
+    <% if(page < 3 ) { %>
+        <span class="centerpage">
+            <% for (var i = 0 ; i<3;i++) { %>
+                <a href="?page=<%= (i + 1) %>"><%= (i + 1) %></a>
+            <% } %>
+        </span>
+    <% } %>
+    <% if(page >= 3 ) { %>
+        <span class="centerpage">
+            <% for(var i = (page-2) ; i<(page+1);i++) { %>
+                <% if(page < (isLastPage-1) ) { %>
+                    <a href="?page=<%= (i + 1 )%>"><%= (i + 1 ) %></a>
+                <% } %>
+                <% if(page >= (isLastPage-1) ) { %>
+                    <a href="?page=<%= i %>"><%= i %></a>
+                <% } %>
+            <% } %>
+        </span>
+    <% } %>
+
+    <!--<% if(!isLastPage) { %>-->
+    <span class="nextpage">
+        <a href="?page=<%= page + 1 %>">下一页</a>
+    </span>
+    <!--<% } %>-->
+
+    <% if(!isLastPage) { %>
+    <span class="nextpage">
+        <a href="?page=<%= isLastPage %>">尾页</a>
+    </span>
+    <% } %>
+</div>
+
